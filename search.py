@@ -35,7 +35,7 @@ def detect(cfg,
     ############# 行人重识别模型初始化 #############
     query_loader, num_query = make_data_loader(reidCfg)
     reidModel = build_model(reidCfg, num_classes=10126)
-    reidModel.load_param(reidCfg.TEST.WEIGHT)
+    reidModel.load_param(reidCfg.TEST.WEIGHT, device)
     reidModel.to(device).eval()
 
     query_feats = []
